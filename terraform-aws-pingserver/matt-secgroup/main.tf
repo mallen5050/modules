@@ -1,4 +1,4 @@
-resource "aws_security_group" "vpc-64ece81c-MATT-TEMPORARY-JUMP-PORTAL-----REMOVE" {
+resource "aws_security_group" "MATT-TEMPORARY-JUMP-PORTAL-----REMOVE" {
     name        = "MATT TEMPORARY JUMP PORTAL---- REMOVE"
     description = "MATT TEMPORARY JUMP PORTAL---- REMOVE"
     vpc_id      = "${var.vpc_id}""
@@ -24,4 +24,3 @@ resource "aws_security_group" "vpc-64ece81c-MATT-TEMPORARY-JUMP-PORTAL-----REMOV
 }
 
 variable "vpc_id" {}
-  version = "0.0.1"

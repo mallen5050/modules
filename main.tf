@@ -1,14 +1,14 @@
-resource "aws_instance" "POM-prod-us-east-2-TEST-SERVER" {
-    ami                         = "${var.vpc_id}"
-    availability_zone           = "us-east-2a"
+resource "aws_instance" "PING-SERVER" {
+    ami                         = "${var.ami_id}"
+    availability_zone           = "${var.availability_zone}"
     ebs_optimized               = false
     instance_type               = "t2.micro"
     monitoring                  = false
-    key_name                    = "POM-prod-us-east-2-kp"
-    subnet_id                   = "subnet-e9218681"
-    vpc_security_group_ids      = ["sg-3b70f151", "sg-9c9f5df7", "sg-37b93e5d"]
+    key_name                    = "${var.key_name"}
+    subnet_id                   = "${var.subnet-id"}
+    vpc_security_group_ids      = "${var.vpc_security_group_ids"}
     associate_public_ip_address = false
-    private_ip                  = "172.25.13.225"
+    private_ip                  = "${private_ip}"
     source_dest_check           = true
 
     root_block_device {
@@ -18,7 +18,12 @@ resource "aws_instance" "POM-prod-us-east-2-TEST-SERVER" {
     }
 
     tags {
-        "Name" = "POM-prod-us-east-2-TEST-SERVER"
+        "Name" = "PING-SERVER"
     }
 }
-  variable "vpc_id" {}
+  variable "ami_id" {}
+  variable "availability_zone" {}
+  variable "key_name" {}
+  variable "subnet-id" {}
+  variable "vpc_security_group_ids" {}
+  variable "private_ip" {}

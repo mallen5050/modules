@@ -1,7 +1,7 @@
-resource "aws_security_group" "POM-prod-us-east-2-POM-Domain-Controllers" {
-    name        = "POM-prod-us-east-2-POM-Domain-Controllers"
-    description = "POM-prod-us-east-2-POM-Domain-Controllers"
-    vpc_id      = "vpc-f6b46d9e"
+resource "aws_security_group" "Domain-Controllers" {
+    name        = "Domain-Controllers"
+    description = "Domain-Controllers"
+    vpc_id      = "${var.vpc_id}""
 
     ingress {
         from_port       = -1
@@ -23,4 +23,4 @@ resource "aws_security_group" "POM-prod-us-east-2-POM-Domain-Controllers" {
     }
 }
 
-  version = "0.0.1"
+variable "vpc_id" {}
