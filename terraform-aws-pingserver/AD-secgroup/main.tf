@@ -22,3 +22,5 @@ resource "aws_security_group" "POM-prod-us-east-2-POM-Domain-Controllers" {
         "Name" = "POM-prod-us-east-2-POM-Domain-Controllers"
     }
 }
+
+  version = "0.0.1"

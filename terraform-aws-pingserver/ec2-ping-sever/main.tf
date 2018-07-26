@@ -21,3 +21,4 @@ resource "aws_instance" "POM-prod-us-east-2-TEST-SERVER" {
         "Name" = "POM-prod-us-east-2-TEST-SERVER"
     }
 }
+  version = "0.0.1"
