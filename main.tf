@@ -4,9 +4,9 @@ resource "aws_instance" "PING-SERVER" {
     ebs_optimized               = false
     instance_type               = "t2.micro"
     monitoring                  = false
-    key_name                    = "${var.key_name"}
-    subnet_id                   = "${var.subnet-id"}
-    vpc_security_group_ids      = "${var.vpc_security_group_ids"}
+    key_name                    = "${var.key_name}"
+    subnet_id                   = "${var.subnet-id}"
+    vpc_security_group_ids      = "${var.vpc_security_group_ids}"
     associate_public_ip_address = false
     private_ip                  = "${private_ip}"
     source_dest_check           = true
