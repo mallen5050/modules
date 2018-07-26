@@ -1,5 +1,5 @@
 resource "aws_instance" "POM-prod-us-east-2-TEST-SERVER" {
-    ami                         = "ami-3e07395b"
+    ami                         = "${var.vpc_id}"
     availability_zone           = "us-east-2a"
     ebs_optimized               = false
     instance_type               = "t2.micro"
@@ -21,4 +21,4 @@ resource "aws_instance" "POM-prod-us-east-2-TEST-SERVER" {
         "Name" = "POM-prod-us-east-2-TEST-SERVER"
     }
 }
-  version = "0.0.1"
+  variable "vpc_id" {}
